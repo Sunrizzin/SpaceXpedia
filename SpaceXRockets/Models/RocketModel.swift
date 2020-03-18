@@ -65,6 +65,7 @@ class Rocket: Object, Mappable {
         rocket_type <- map["rocket_type"]
         second_stage <- map["second_stage"]
         stages <- map["stages"]
+        wikipedia <- map["wikipedia"]
         success_rate_pct <- map["success_rate_pct"]
     }
 }

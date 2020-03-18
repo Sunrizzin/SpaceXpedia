@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		581B1A409490BFF5C0D1E753 /* Pods_SpaceXRockets_SpaceXRocketsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBC3893A843A4DC9B87193E /* Pods_SpaceXRockets_SpaceXRocketsUITests.framework */; };
 		67C577E9D600568F1D80DEFB /* Pods_SpaceXRocketsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF960540AE408DC17B322EE /* Pods_SpaceXRocketsTests.framework */; };
+		8B05F78524223F5100AF763F /* RocketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B05F78424223F5100AF763F /* RocketDetailViewController.swift */; };
 		8BEFC74524212AE000696E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEFC74424212AE000696E9C /* AppDelegate.swift */; };
 		8BEFC74724212AE000696E9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEFC74624212AE000696E9C /* SceneDelegate.swift */; };
 		8BEFC74924212AE000696E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEFC74824212AE000696E9C /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 		0C172FDBBB25C0E0262F444D /* Pods-SpaceXRockets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXRockets.release.xcconfig"; path = "Target Support Files/Pods-SpaceXRockets/Pods-SpaceXRockets.release.xcconfig"; sourceTree = "<group>"; };
 		5695CFB54AA663C1B2B7A8E8 /* Pods_SpaceXRockets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceXRockets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83290FFA205B71959FCEFA69 /* Pods-SpaceXRockets-SpaceXRocketsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXRockets-SpaceXRocketsUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceXRockets-SpaceXRocketsUITests/Pods-SpaceXRockets-SpaceXRocketsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B05F78424223F5100AF763F /* RocketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailViewController.swift; sourceTree = "<group>"; };
 		8BEFC74124212AE000696E9C /* SpaceXRockets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceXRockets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BEFC74424212AE000696E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BEFC74624212AE000696E9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				8BEFC74F24212AE200696E9C /* LaunchScreen.storyboard */,
 				8BEFC75224212AE200696E9C /* Info.plist */,
 				8BEFC7772421E62200696E9C /* RocketCollectionViewCell.swift */,
+				8B05F78424223F5100AF763F /* RocketDetailViewController.swift */,
 			);
 			path = SpaceXRockets;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B05F78524223F5100AF763F /* RocketDetailViewController.swift in Sources */,
 				8BEFC74924212AE000696E9C /* ViewController.swift in Sources */,
 				8BEFC77624212CA200696E9C /* RocketModel.swift in Sources */,
 				8BEFC74524212AE000696E9C /* AppDelegate.swift in Sources */,

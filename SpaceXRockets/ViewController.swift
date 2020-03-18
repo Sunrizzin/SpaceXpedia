@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
     private let realm = try! Realm()
     let rockets = try! Realm().objects(Rocket.self)
     
@@ -49,6 +50,16 @@ class ViewController: UIViewController {
     }
     
     
+    
+    @objc func seeMore(sender: UIButton!) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "rocketDetails") as! RocketDetailViewController
+        vc.modalPresentationStyle = .formSheet
+        vc.modalTransitionStyle = .coverVertical
+        vc.id = self.rockets[sender.tag].id
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -60,10 +71,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rocket", for: indexPath) as! RocketCollectionViewCell
         
         if !rockets[indexPath.row].flickr_images.isEmpty {
-            cell.background.kf.setImage(with: URL(string: rockets[indexPath.row].flickr_images[Int.random(in: 0..<rockets[indexPath.row].flickr_images.count - 1)]))
+            let index = Int.random(in: 0..<rockets[indexPath.row].flickr_images.count - 1)
+            let image = ImageResource(downloadURL: URL(string: rockets[indexPath.row].flickr_images[index])!, cacheKey: rockets[indexPath.row].flickr_images[index])
+            cell.background.kf.setImage(with: image)
             cell.nameLabel.text = rockets[indexPath.row].rocket_name
             cell.typeLabel.text = rockets[indexPath.row].description_field
-            
+            cell.more.addTarget(self, action: #selector(seeMore(sender:)), for: .touchUpInside)
+            cell.more.tag = indexPath.row
         }
         
         return cell
