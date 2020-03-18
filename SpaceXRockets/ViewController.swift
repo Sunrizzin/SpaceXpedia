@@ -13,7 +13,7 @@ import Alamofire
 import AlamofireObjectMapper
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let realm = try! Realm()
@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "SpaceX Rokets"
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         
         getRockets()
     }
@@ -39,13 +42,13 @@ class ViewController: UIViewController {
                     }
                     self.collectionView.reloadData()
                 } catch _ {
-                   print("error")
+                    print("error")
                 }
             }
         }
     }
-
-
+    
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -57,15 +60,22 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rocket", for: indexPath) as! RocketCollectionViewCell
         
         if !rockets[indexPath.row].flickr_images.isEmpty {
-            let imageIndex = Int.random(in: 0..<rockets[indexPath.row].flickr_images.count - 1)
-            cell.background.kf.setImage(with: URL(string: rockets[indexPath.row].flickr_images[imageIndex]))
+            cell.background.kf.setImage(with: URL(string: rockets[indexPath.row].flickr_images[Int.random(in: 0..<rockets[indexPath.row].flickr_images.count - 1)]))
+            cell.nameLabel.text = rockets[indexPath.row].rocket_name
+            cell.typeLabel.text = rockets[indexPath.row].description_field
+            
         }
-        
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationController?.setNavigationBarHidden(!(self.navigationController?.navigationBar.isHidden)!, animated: true)
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+        return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height - 12)
     }
 }
+
