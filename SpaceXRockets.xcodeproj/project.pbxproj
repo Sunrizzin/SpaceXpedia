@@ -20,6 +20,7 @@
 		8BEFC76724212AE300696E9C /* SpaceXRocketsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEFC76624212AE300696E9C /* SpaceXRocketsUITests.swift */; };
 		8BEFC77624212CA200696E9C /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEFC77524212CA200696E9C /* RocketModel.swift */; };
 		8BEFC7782421E62200696E9C /* RocketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEFC7772421E62200696E9C /* RocketCollectionViewCell.swift */; };
+		8BF58690242296C500A96EA4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5868F242296C500A96EA4 /* SnapshotHelper.swift */; };
 		F8ABE543F73A624D4834DBD0 /* Pods_SpaceXRockets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5695CFB54AA663C1B2B7A8E8 /* Pods_SpaceXRockets.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		8BEFC76824212AE300696E9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BEFC77524212CA200696E9C /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
 		8BEFC7772421E62200696E9C /* RocketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCollectionViewCell.swift; sourceTree = "<group>"; };
+		8BF5868F242296C500A96EA4 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		AAD436C6C08B0DAC0D05AEA7 /* Pods-SpaceXRocketsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXRocketsTests.release.xcconfig"; path = "Target Support Files/Pods-SpaceXRocketsTests/Pods-SpaceXRocketsTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4AC7A197564A97D0267190E /* Pods-SpaceXRockets-SpaceXRocketsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXRockets-SpaceXRocketsUITests.release.xcconfig"; path = "Target Support Files/Pods-SpaceXRockets-SpaceXRocketsUITests/Pods-SpaceXRockets-SpaceXRocketsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BFBC3893A843A4DC9B87193E /* Pods_SpaceXRockets_SpaceXRocketsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceXRockets_SpaceXRocketsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 		8BEFC76524212AE300696E9C /* SpaceXRocketsUITests */ = {
 			isa = PBXGroup;
 			children = (
+				8BF5868F242296C500A96EA4 /* SnapshotHelper.swift */,
 				8BEFC76624212AE300696E9C /* SpaceXRocketsUITests.swift */,
 				8BEFC76824212AE300696E9C /* Info.plist */,
 			);
@@ -446,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BEFC76724212AE300696E9C /* SpaceXRocketsUITests.swift in Sources */,
+				8BF58690242296C500A96EA4 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +607,9 @@
 			baseConfigurationReference = DD17A0FACB6A1AAD02852C00 /* Pods-SpaceXRockets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = PV86YXPL67;
 				INFOPLIST_FILE = SpaceXRockets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -612,8 +618,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunrizz.SpaceXRockets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -622,7 +630,9 @@
 			baseConfigurationReference = 0C172FDBBB25C0E0262F444D /* Pods-SpaceXRockets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = PV86YXPL67;
 				INFOPLIST_FILE = SpaceXRockets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -631,8 +641,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunrizz.SpaceXRockets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

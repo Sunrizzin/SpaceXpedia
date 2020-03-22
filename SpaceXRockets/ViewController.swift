@@ -49,6 +49,9 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func reloadAction(_ sender: UIBarButtonItem) {
+        getRockets()
+    }
     
     
     @objc func seeMore(sender: UIButton!) {
@@ -79,7 +82,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             cell.more.addTarget(self, action: #selector(seeMore(sender:)), for: .touchUpInside)
             cell.more.tag = indexPath.row
         }
-        
+        self.view.layoutIfNeeded()
         return cell
     }
     
@@ -92,4 +95,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height - 12)
     }
 }
+
+
 

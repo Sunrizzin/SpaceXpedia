@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='SpaceXRocketsTests.xctest' tests='4' failures='0'>
+  <testsuite name='SpaceXRocketsUITests.SpaceXRocketsUITests' tests='2' failures='0'>
+    <testcase classname='SpaceXRocketsUITests.SpaceXRocketsUITests' name='testExample' time='2.901'/>
+    <testcase classname='SpaceXRocketsUITests.SpaceXRocketsUITests' name='testLaunchPerformance' time='21.568'/>
+  </testsuite>
+  <testsuite name='SpaceXRocketsTests.SpaceXRocketsTests' tests='2' failures='0'>
+    <testcase classname='SpaceXRocketsTests.SpaceXRocketsTests' name='testExample' time='0.001'/>
+    <testcase classname='SpaceXRocketsTests.SpaceXRocketsTests' name='testPerformanceExample' time='0.262'/>
+  </testsuite>
+</testsuites>
