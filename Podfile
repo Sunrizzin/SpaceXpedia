@@ -10,6 +10,7 @@ target 'SpaceXRockets' do
 	pod 'AlamofireObjectMapper'
 	pod 'RealmSwift'
 	pod 'Kingfisher'
+	pod 'PromiseKit'
   target 'SpaceXRocketsTests' do
     inherit! :search_paths
     # Pods for testing

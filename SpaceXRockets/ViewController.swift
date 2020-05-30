@@ -15,7 +15,7 @@ import AlamofireObjectMapper
 class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var photoService: PhotoService?
     
     private let realm = try! Realm()
     let rockets = try! Realm().objects(Rocket.self)
@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "SpaceX Rokets"
         
+        
+        photoService = PhotoService(container: self.collectionView)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         getRockets()
@@ -75,8 +77,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         if !rockets[indexPath.row].flickr_images.isEmpty {
             let index = Int.random(in: 0..<rockets[indexPath.row].flickr_images.count - 1)
-            let image = ImageResource(downloadURL: URL(string: rockets[indexPath.row].flickr_images[index])!, cacheKey: rockets[indexPath.row].flickr_images[index])
-            cell.background.kf.setImage(with: image)
+            cell.background.image = self.photoService?.photo(atIndexpath: indexPath, byUrl: rockets[indexPath.row].flickr_images[0])
+            //            let image = ImageResource(downloadURL: URL(string: rockets[indexPath.row].flickr_images[index])!, cacheKey: rockets[indexPath.row].flickr_images[index])
+//            cell.background.kf.setImage(with: image)
+            print(rockets[indexPath.row].flickr_images[0])
             cell.nameLabel.text = rockets[indexPath.row].rocket_name
             cell.typeLabel.text = rockets[indexPath.row].description_field
             cell.more.addTarget(self, action: #selector(seeMore(sender:)), for: .touchUpInside)
