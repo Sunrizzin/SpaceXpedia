@@ -7,7 +7,7 @@ target 'SpaceXRockets' do
 
   # Pods for SpaceXRockets
 	pod 'Alamofire'
-	pod 'AlamofireObjectMapper'
+	pod 'AlamofireObjectMapper', :git => 'https://github.com/T-Pro/AlamofireObjectMapper.git', :branch => 'master'
 	pod 'RealmSwift'
 	pod 'Kingfisher'
 	pod 'PromiseKit'

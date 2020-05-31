@@ -1,0 +1,62 @@
+PODS:
+  - Alamofire (5.2.1)
+  - AlamofireObjectMapper (6.3.0):
+    - Alamofire (~> 5.2.0)
+    - ObjectMapper (~> 4.2.0)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - ObjectMapper (4.2.0)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
+  - Realm (5.0.1):
+    - Realm/Headers (= 5.0.1)
+  - Realm/Headers (5.0.1)
+  - RealmSwift (5.0.1):
+    - Realm (= 5.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper (from `https://github.com/T-Pro/AlamofireObjectMapper.git`, branch `master`)
+  - Kingfisher
+  - PromiseKit
+  - RealmSwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - ObjectMapper
+    - PromiseKit
+    - Realm
+    - RealmSwift
+
+EXTERNAL SOURCES:
+  AlamofireObjectMapper:
+    :branch: master
+    :git: https://github.com/T-Pro/AlamofireObjectMapper.git
+
+CHECKOUT OPTIONS:
+  AlamofireObjectMapper:
+    :commit: edafdcfbc90a3b9cde3c94e3f63a14a348f663a1
+    :git: https://github.com/T-Pro/AlamofireObjectMapper.git
+
+SPEC CHECKSUMS:
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  AlamofireObjectMapper: a396f2a07ba1ad9ec8ab3b604452012455d964c1
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  Realm: d36cfc336d76d2e15b13651beb6050f49354de4b
+  RealmSwift: f29ae0ceaf4fbaf4803c40bbebd838ea2beb903a
+
+PODFILE CHECKSUM: 7ca1d303df973e2964c689c9bdc8caabca36109f
+
+COCOAPODS: 1.9.2
