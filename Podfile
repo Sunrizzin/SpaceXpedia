@@ -10,7 +10,8 @@ target 'SpaceXRockets' do
 	pod 'AlamofireObjectMapper', :git => 'https://github.com/T-Pro/AlamofireObjectMapper.git', :branch => 'master'
 	pod 'RealmSwift'
 	pod 'Kingfisher'
-	pod 'PromiseKit'
+  pod 'PromiseKit'
+  pod 'PanModal'
   target 'SpaceXRocketsTests' do
     inherit! :search_paths
     # Pods for testing

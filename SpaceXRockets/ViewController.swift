@@ -9,10 +9,12 @@
 import UIKit
 import RealmSwift
 import Kingfisher
+import PanModal
 import Alamofire
 import AlamofireObjectMapper
 
 class ViewController: UIViewController {
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     var photoService: PhotoService?
@@ -27,7 +29,7 @@ class ViewController: UIViewController {
         
         photoService = PhotoService(container: self.collectionView)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         getRockets()
     }
     
@@ -57,11 +59,11 @@ class ViewController: UIViewController {
     
     
     @objc func seeMore(sender: UIButton!) {
+        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "rocketDetails") as! RocketDetailViewController
-        vc.modalPresentationStyle = .formSheet
-        vc.modalTransitionStyle = .coverVertical
         vc.id = self.rockets[sender.tag].id
-        self.present(vc, animated: true, completion: nil)
+        self.presentPanModal(vc)
+        
     }
     
     
@@ -77,7 +79,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         if !rockets[indexPath.row].flickr_images.isEmpty {
             let index = Int.random(in: 0..<rockets[indexPath.row].flickr_images.count - 1)
-            cell.background.image = self.photoService?.photo(atIndexpath: indexPath, byUrl: rockets[indexPath.row].flickr_images[0])
+            cell.background.image = self.photoService?.photo(atIndexpath: indexPath, byUrl: rockets[indexPath.row].flickr_images[index])
             //            let image = ImageResource(downloadURL: URL(string: rockets[indexPath.row].flickr_images[index])!, cacheKey: rockets[indexPath.row].flickr_images[index])
 //            cell.background.kf.setImage(with: image)
             print(rockets[indexPath.row].flickr_images[0])
@@ -90,10 +92,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.setNavigationBarHidden(!(self.navigationController?.navigationBar.isHidden)!, animated: true)
-        
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        self.navigationController?.setNavigationBarHidden(!(self.navigationController?.navigationBar.isHidden)!, animated: true)
+//
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height - 12)

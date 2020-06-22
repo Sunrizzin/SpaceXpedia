@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import PanModal
 import Kingfisher
 import RealmSwift
 
-class RocketDetailViewController: UIViewController {
+class RocketDetailViewController: UIViewController, PanModalPresentable {
+    var panScrollable: UIScrollView?
     
-    @IBOutlet weak var background: UIImageView!
+    
+ //   @IBOutlet weak var background: UIImageView!
     let rockets = try! Realm().objects(Rocket.self)
     var id = 0
     
     @IBOutlet weak var stagesChange: UISegmentedControl!
-    @IBOutlet weak var name: UILabel!
+   // @IBOutlet weak var name: UILabel!
     @IBOutlet weak var company: UILabel!
     @IBOutlet weak var country: UILabel!
     @IBOutlet weak var height: UILabel!
@@ -40,16 +43,15 @@ class RocketDetailViewController: UIViewController {
     @IBOutlet weak var payloadsTwo: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.stageTwoView.isHidden = true
         stagesChange.tintColor = .white
         let item = rockets.filter("id == \(id)")
-        let index = Int.random(in: 0..<item[0].flickr_images.count - 1)
-        let image = ImageResource(downloadURL: URL(string: item[0].flickr_images[index])!, cacheKey: item[0].flickr_images[index])
-        self.background.kf.setImage(with: image)
-        self.name.text = item[0].rocket_name
+     //   let index = Int.random(in: 0..<item[0].flickr_images.count - 1)
+     //   let image = ImageResource(downloadURL: URL(string: item[0].flickr_images[index])!, cacheKey: item[0].flickr_images[index])
+     //   self.background.kf.setImage(with: image)
+      //  self.name.text = item[0].rocket_name
         self.company.text = "\(item[0].company)"
         self.country.text = item[0].country
         self.height.text = "\(item[0].height!.feet) feet"
@@ -83,6 +85,10 @@ class RocketDetailViewController: UIViewController {
         self.thrustTwo.text = "\(item[0].second_stage!.thrust!.lbf) lbf"
         self.payloadsTwo.text = "\(item[0].second_stage!.payloads!.option_1)"
         
+    }
+    
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(270)
     }
     
     @IBAction func selectStage(_ sender: UISegmentedControl) {
